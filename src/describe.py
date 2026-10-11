@@ -12,7 +12,6 @@ from diff import visible_uv
 from verify_vlm import MODEL, PRICE, USAGE, _png, best_views, load_env
 
 OUT = Path("data/out")
-FRAMES = ["data/frames/IMG_8289", "data/frames/IMG_8290"]  # the joint run's inputs, A then B
 SCHEMA = {
     "type": "object",
     "properties": {
@@ -100,7 +99,7 @@ def main():
     client = anthropic.Anthropic()
     d = dict(np.load(OUT / "joint.npz"))
     a = json.loads((OUT / "alignment.json").read_text())
-    paths, _, src = frame_list(FRAMES)
+    paths, _, src = frame_list([str(x) for x in d["dirs"]])
     assert np.array_equal(src, d["src"]), "frames on disk differ from the joint run"
     path = OUT / "changes_verified.json"
     entries = json.loads(path.read_text())

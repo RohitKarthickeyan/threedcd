@@ -90,7 +90,7 @@ def main(name, dirs):
 
     paths, video, src = frame_list(dirs)
     d = infer(load_model(), paths)
-    d.update(video=video, src=src)
+    d.update(video=video, src=src, dirs=np.array([str(x) for x in dirs]))  # later stages find the frames here
     OUT.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(OUT / f"{name}.npz", **d)
 
