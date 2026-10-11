@@ -1,0 +1,13 @@
+# Install torch first, CUDA build:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+vggt-omega @ git+https://github.com/facebookresearch/vggt-omega.git@48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6
+numpy<2
+scipy
+matplotlib
+opencv-python
+huggingface_hub
+pytest
+transformers
+anthropic
+gradio
+trimesh

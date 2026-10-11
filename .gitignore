@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.superpowers/
+data/frames/
+data/out/
+
+# Agent context layer: local only
+CLAUDE.md
+PROGRESS.md
+CONTEXT.md
+.env
+scene-change-prd.md
