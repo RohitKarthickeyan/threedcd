@@ -8,8 +8,10 @@ a plain-English sentence describing each change.
 
 How it works:
 
-1. **One 3D model from both videos.** VGGT-Omega, a neural network, predicts the camera position and a depth map
-   for 40 sharp frames from each video in a single pass, which puts both videos in the same 3D coordinate frame.
+1. **One 3D model from both videos.** [VGGT-Omega](https://github.com/facebookresearch/vggt-omega), a feed-forward
+   neural network built on the Visual Geometry Grounded Transformer (VGGT) architecture, predicts the camera
+   position and a depth map for 40 sharp frames from each video in a single pass, which puts both videos in the
+   same 3D coordinate frame.
 2. **Measure the noise.** Walls and furniture that didn't change should line up between the videos; how far they
    don't (about 3 cm here) is the tolerance tau. Every later threshold is a multiple of tau, so reconstruction
    noise is not mistaken for change.
